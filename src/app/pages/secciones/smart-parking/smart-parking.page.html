@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button [defaultHref]="defaultHref"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{titulo}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="3">
+          <img src="assets/img/smart.png" class="imgdisposit">
+        </ion-col>
+        <ion-col size="9">
+          <ion-item lines="none">
+            <h4 class="titmac">{{titulo}}</h4>
+          </ion-item> 
+          <ion-card-content lines="none" class="hpadmen">
+            <p class="descri">{{serie}}</p>
+            <p class="descri">{{direc}}</p>
+            <ion-row class="cardfooter">
+              <ion-col class="statusonlin">
+                    <p class="descri">{{status}} </p>
+              </ion-col>
+              <ion-col>
+                    <p class="descri fec">{{created_date}}</p>
+              </ion-col>
+            </ion-row>
+          </ion-card-content>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+  <ion-card>
+    <div style="text-align:center">
+      <apx-chart
+        [series]="chartOptions.series"
+        [chart]="chartOptions.chart"
+        [xaxis]="chartOptions.xaxis"
+        [title]="chartOptions.title"
+      ></apx-chart>
+    </div>
+  </ion-card>
+  <ion-card>
+    <ion-card-header id="cabecera">
+      <ion-card-title>Estado</ion-card-title>
+      <ion-card-subtitle>{{batery}}% Bateria</ion-card-subtitle>
+    </ion-card-header>
+  </ion-card>
+
+</ion-content>

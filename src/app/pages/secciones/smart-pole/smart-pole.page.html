@@ -1,0 +1,90 @@
+<ion-header translucent="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button [defaultHref]="defaultHref"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{titulo}}</ion-title>
+  </ion-toolbar>
+  <ion-card>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="3">
+          <img src="assets/img/smart.png" class="imgdisposit">
+        </ion-col>
+        <ion-col size="9">
+          <ion-item lines="none">
+            <h4 class="titmac">Smart Pole</h4>
+          </ion-item> 
+          <ion-card-content lines="none" class="hpadmen">
+            <p class="descri">{{serie}}</p>
+            <p class="descri">{{direc}}</p>
+            <ion-row class="cardfooter">
+              <ion-col class="statusonlin">
+                    <p class="descri">{{status}}</p>
+              </ion-col>
+              <ion-col>
+                    <p class="descri fec">{{created_date}}</p>
+              </ion-col>
+            </ion-row>
+          </ion-card-content>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+  <ion-toolbar>
+    <ion-segment [(ngModel)]="type">
+      <ion-segment-button value="control">
+        <ion-label>Control</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="eventos">
+        <ion-label>Eventos</ion-label>
+      </ion-segment-button>
+      <!-- <ion-segment-button value="envivo">
+        <ion-label>En Vivo</ion-label>
+      </ion-segment-button> -->
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ng-container [ngSwitch]="type">
+    <ion-list *ngSwitchCase="'control'">
+      <ion-item style="border-radius:10px;border-style: solid;border-color: #5f5f5f; margin: 30px;">
+        <ion-label>{{titconcat}}</ion-label>  
+        <ion-select [(ngModel)]="controlact" id="controlact" (ionChange)="CambiodeSelect($event.target.value)">
+          <ion-select-option *ngFor="let dataoption of DataControlOptions" value="{{dataoption.value}}">{{dataoption.tag}}</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item *ngFor="let data of DataControl">{{ data.tag }} <ion-toggle slot="end" [checked]="data.value" (ionChange)="CambioData(data.tag,data.value)"></ion-toggle></ion-item>
+    </ion-list>
+    <ion-list *ngSwitchCase="'eventos'">
+      <ion-item *ngFor="let data of DataEvents"> 
+        <ion-grid>
+            <ion-row>
+              <ion-col>
+                <div>
+                  {{ data.tag }} 
+                </div>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <div style="font-size: 12px;">
+                  {{ data.created_date }}
+                </div>
+              </ion-col>
+              <ion-col>
+                <div style="font-size: 12px;">
+                  {{ data.username.email }}
+                </div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+      </ion-item>
+    </ion-list>
+    <!-- <ion-list *ngSwitchCase="'envivo'">
+      <ion-item>Paul mentioned you in asdasdasdasd</ion-item>
+      <ion-item>Adrian mentioned you in a comment</ion-item>
+    </ion-list> -->
+  </ng-container>
+</ion-content>

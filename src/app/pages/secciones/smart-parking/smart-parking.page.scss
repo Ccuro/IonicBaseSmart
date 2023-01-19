@@ -1,0 +1,81 @@
+#chart {
+    max-width: 650px;
+    margin: 35px auto;
+  }
+  .imgdisposit{
+    height: 104px;
+    left: 13px;
+    top: 77px;
+    border-radius: 4px;
+  }
+  .titmac{
+    font-family: arial;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-weight: 600;
+  }
+  .descri{
+    font-family: arial;
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 12px;
+    letter-spacing: 0.05em;
+    text-align: left;
+  }
+  .hpadmen{
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+  .statusonlin{
+    padding-left: 0px;
+  }
+  .fec{
+    font-size: 9px;
+  }
+
+  .apexcharts-toolbar {
+    display: none !important;
+  }
+  .apexcharts-menu-icon {
+    display: none !important;
+  }
+  #contenidocard{
+    width: 304px;
+    height: 40px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 40px;
+    display: flex;
+    align-items: flex-end;
+    letter-spacing: 0.25px;
+    color: rgba(0, 0, 0, 0.87);
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+  }
+  #titcardhead{
+    width: 304px;
+    height: 28px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+    letter-spacing: 0.44px;
+    color: rgba(0, 0, 0, 0.6);
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+  }
+  #cabecera{
+    padding: 5vh 3vh;
+  }

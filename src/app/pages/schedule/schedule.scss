@@ -1,0 +1,71 @@
+ion-fab-button {
+  --background: var(--ion-color-step-150, #fff);
+  --background-hover: var(--ion-color-step-200, #f2f2f2);
+  --background-focused: var(--ion-color-step-250, #d9d9d9);
+
+  --color: var(--ion-color-primary, #3880ff);
+}
+
+/*
+ * Material Design uses the ripple for activated
+ * so only style the iOS activated background
+ */
+.ios ion-fab-button {
+  --background-activated: var(--ion-color-step-250, #d9d9d9);
+}
+
+$categories: (
+  ionic: var(--ion-color-primary),
+  angular: #ac282b,
+  communication: #8e8d93,
+  tooling: #fe4c52,
+  services: #fd8b2d,
+  design: #fed035,
+  workshop: #69bb7b,
+  food: #3bc7c4,
+  documentation: #b16be3,
+  navigation: #6600cc
+);
+
+@each $track, $value in map-remove($categories) {
+  ion-item-sliding[track='#{$track}'] ion-label {
+    border-left: 2px solid $value;
+    padding-left: 10px;
+  }
+}
+
+.imgdisposit{
+  height: 104px;
+  left: 13px;
+  top: 77px;
+  border-radius: 4px;
+}
+.titmac{
+  font-family: arial;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: 0em;
+  text-align: left;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-weight: 600;
+}
+.descri{
+  font-family: arial;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 12px;
+  letter-spacing: 0.05em;
+  text-align: left;
+}
+.hpadmen{
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+.statusonlin{
+  padding-left: 0px;
+}
+.fec{
+  font-size: 9px;
+}
